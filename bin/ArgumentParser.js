@@ -1,13 +1,14 @@
+const CONSTANTS = require('./constants')
 const argumentMap = {
     "2-f" : (resolve, reject, args) => {
         const fileName = args[0]
-        resolve({fileName, type:'continuous'})
+        resolve({fileName, type: CONSTANTS.CONT})
     },
     "3-n" : (resolve, reject, args) => {
         try {
             const n = parseInt(args[0])
             const fileName = args[1]
-            resolve({fileName, n,type:'last'})
+            resolve({fileName, n,type: CONSTANTS.LAST})
         }
         catch(e) {
             reject("please provide a number when using -n")
